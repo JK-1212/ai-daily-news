@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AI model release - Google News</title>
+    <item>
+      <title>New AI model launched - Reuters</title>
+      <link>https://news.google.com/rss/articles/abc123</link>
+      <description>A new AI model was launched today.</description>
+      <pubDate>Tue, 11 Mar 2026 06:00:00 GMT</pubDate>
+      <source url="https://reuters.com">Reuters</source>
+    </item>
+    <item>
+      <title>AI breakthrough reported - BBC</title>
+      <link>https://news.google.com/rss/articles/def456</link>
+      <description>Scientists reported a breakthrough.</description>
+      <pubDate>Tue, 11 Mar 2026 05:00:00 GMT</pubDate>
+      <source url="https://bbc.com">BBC</source>
+    </item>
+  </channel>
+</rss>
