@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>TechCrunch AI</title>
+    <item>
+      <title>OpenAI releases GPT-5</title>
+      <link>https://techcrunch.com/openai-gpt5</link>
+      <description>OpenAI announced GPT-5 today.</description>
+      <pubDate>Tue, 11 Mar 2026 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Google launches Gemini 3</title>
+      <link>https://techcrunch.com/gemini3</link>
+      <description>Google released Gemini 3.</description>
+      <pubDate>Tue, 11 Mar 2026 07:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Old news from last week</title>
+      <link>https://techcrunch.com/old</link>
+      <description>This is old.</description>
+      <pubDate>Tue, 04 Mar 2026 08:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
