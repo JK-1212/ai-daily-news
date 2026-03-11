@@ -1,5 +1,7 @@
 import hashlib
 import logging
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 
 import feedparser
 
@@ -7,12 +9,30 @@ from src.models import NewsItem
 
 logger = logging.getLogger(__name__)
 
+MAX_AGE_HOURS = 48
+
+
+def _is_recent(entry: dict) -> bool:
+    published = entry.get("published", "")
+    if not published:
+        return True
+    try:
+        dt = parsedate_to_datetime(published)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=MAX_AGE_HOURS)
+        return dt >= cutoff
+    except Exception:
+        return True
+
 
 def fetch_google_news(query_url: str) -> list[NewsItem]:
     try:
         feed = feedparser.parse(query_url)
         items = []
         for entry in feed.entries:
+            if not _is_recent(entry):
+                continue
             item_id = hashlib.md5(
                 (entry.get("link", "") + entry.get("title", "")).encode()
             ).hexdigest()[:12]

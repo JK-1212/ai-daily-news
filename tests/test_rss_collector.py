@@ -17,7 +17,7 @@ def test_fetch_rss_feed_parses_items(tmp_path):
     with patch("src.collectors.rss_collector.feedparser.parse") as mock_parse:
         mock_parse.return_value = parsed
         items = fetch_rss_feed("TechCrunch AI", "https://example.com/feed")
-    assert len(items) == 3
+    assert len(items) == 2  # 3rd item is older than 48h, filtered out
     assert items[0].title == "OpenAI releases GPT-5"
     assert items[0].source == "TechCrunch AI"
     assert isinstance(items[0], NewsItem)
